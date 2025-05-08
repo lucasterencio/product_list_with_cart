@@ -122,7 +122,7 @@ export class Cart {
       </div>
 
       <div class="carbon-neutral">
-          <img src="../../../assets/images/icon-carbon-neutral.svg">
+          <img src="./assets/images/icon-carbon-neutral.svg">
           <span>This is a <b>carbon-neutral</b> delivery</span>
       </div>
 
@@ -136,7 +136,7 @@ export class Cart {
       this.element.innerHTML = `
             <h2>Your Cart (0)</h2>
             <div class="container-empty">
-                <img src="../../../assets/images/illustration-empty-cart.svg">
+                <img src="./assets/images/illustration-empty-cart.svg">
                 <p>Your added items will appear here</p>
             </div>
 

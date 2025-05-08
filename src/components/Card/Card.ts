@@ -47,7 +47,7 @@ export class Card {
             </picture>
 
             <p tabindex="0" class="btn-format" >
-              <img src="../../../assets/images/icon-add-to-cart.svg">
+              <img src="./assets/images/icon-add-to-cart.svg">
               <span class="card-btn">${this.buttonText}</span>
             </p>
             <div class="card-info">
@@ -69,7 +69,7 @@ export class Card {
       if (button) {
         button.classList.remove("clicado");
         button.innerHTML = `
-          <img src="../../../assets/images/icon-add-to-cart.svg">
+          <img src="./assets/images/icon-add-to-cart.svg">
           <span class="card-btn">${this.buttonText}</span>
         `;
       } 
@@ -91,7 +91,7 @@ export class Card {
         if (button) {
           button.classList.remove("clicado");
           button.innerHTML = `
-            <img src="../../../assets/images/icon-add-to-cart.svg">
+            <img src="./assets/images/icon-add-to-cart.svg">
             <span class="card-btn">${this.buttonText}</span>
         `;
         }
@@ -139,7 +139,7 @@ export class Card {
       } else {
         button.classList.remove("clicado");
         button.innerHTML = `
-          <img src="../../../assets/images/icon-add-to-cart.svg">
+          <img src="./assets/images/icon-add-to-cart.svg">
           <span class="card-btn">${this.buttonText}</span>
         `;
 

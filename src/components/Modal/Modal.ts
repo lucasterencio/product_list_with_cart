@@ -30,7 +30,7 @@ export class Modal {
     this.element.innerHTML = `
             <div class="modal">
                 <header>
-                    <img src="../../../assets/images/icon-order-confirmed.svg">
+                    <img src="./assets/images/icon-order-confirmed.svg">
                     <p class="title">Order Confirmed</p>
                     <span>We hope you enjoy your food!</span>
                 </header>
