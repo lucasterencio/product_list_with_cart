@@ -1,0 +1,127 @@
+.card-img{
+    width: 250px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+
+    
+}
+
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+
+}
+
+.card-btn{
+
+
+    background-color: white;
+    border: 0;
+    
+}
+
+.btn-format{
+    position: absolute;
+    bottom: 21%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+    padding: 12px;
+    gap: 8px;
+    border-radius: 999px;
+    cursor: pointer;
+
+    width: 160px;
+    height: 44px;
+    border: 2px solid #AD8A85;
+    transition: .2s ease-in-out;
+}
+
+.btn-format:hover{
+    color: #C73B0F;
+    border-color: #C73B0F;
+}
+
+.add-img{
+    display: none;
+}
+
+
+
+.card-info{
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .card-category{
+        color: #87635A;
+    }
+
+    p{
+        color: #260F08;
+    }
+
+    .card-price{
+        color: #C73B0F;
+    }
+}
+
+.btn-format.desativado {
+    pointer-events: none;
+}
+
+.btn-format.clicado{
+    background-color: #C73B0F;
+    border: 0;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    
+    .circulo{
+        
+        fill: white;
+    }
+
+    .traco{
+        fill: white;
+    }
+
+    .minus-img{
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+
+    .plus-img{
+        width: 22px;
+        height: 22px;
+    }
+
+    .minus-img:hover, .plus-img:hover{
+        background-color: white; 
+        border-radius: 50%;
+
+        .traco{
+            fill: orangered;
+        }
+
+        .circulo{
+            fill: white;
+            
+        }
+    }
+    
+}
+
+
+
