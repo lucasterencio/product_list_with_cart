@@ -76,33 +76,35 @@ var m=Object.defineProperty;var l=(n,e,t)=>e in n?m(n,e,{enumerable:!0,configura
         
         `}addCloseEvent(){const e=this.element.querySelector(".modal-close"),t=this.element.querySelector(".modal");e==null||e.addEventListener("click",()=>this.close()),this.element.addEventListener("click",()=>this.element.remove()),t==null||t.addEventListener("click",s=>{s.stopPropagation()})}open(){document.body.appendChild(this.element)}close(){document.dispatchEvent(new CustomEvent("reset")),document.dispatchEvent(new CustomEvent("resetCards")),this.element.remove()}}class h{constructor(){o(this,"element");o(this,"items",[]);this.element=document.createElement("div"),this.element.classList.add("cart-box"),this.resetCart(),this.buildCart(),this.setupCartListener()}resetCart(){document.addEventListener("reset",e=>{e.stopPropagation(),this.items=[],this.buildCart()})}setupCartListener(){document.addEventListener("updateCart",e=>{const{productName:t,action:s}=e.detail,a=this.items.findIndex(r=>r.name===t);if(a===-1)return;const i=this.items[a];if(i&&s==="increment")i.quantity+=1;else if(s==="decrement")i.quantity-=1;else if(s==="remove"){const r=this.items.findIndex(c=>c.name===t);this.items.splice(r,1)}this.buildCart()})}addItem(e){const t=this.items.find(s=>s.name===e.name);t?t.quantity+=1:this.items.push({...e,quantity:1}),this.buildCart()}totalPrice(){return`$ ${this.items.map(s=>s.quantity*s.price).reduce((s,a)=>Number(s)+Number(a),0).toFixed(2)}`}buildCart(){this.items.length>0?(this.element.innerHTML=`
       <h2>Your Cart (${this.items.length})</h2>
-      <ul class="item-cart">
-        ${this.items.map((e,t)=>`
-            
-            <div class="item-container">
-                <p>${e.name}</p>
-                <div class="item-description">
-                    <span>${e.quantity}x</span>
-                    <span>@${e.price.toFixed(2)}</span>
-                    <span>$${(e.quantity*e.price).toFixed(2)}</span>
-                </div>
-                
-                <svg data-index="${t}" class="btn-remove-order" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
-                <path 
-                    fill="currentColor" 
-                    d="m19.61 18l4.86-4.86a1 1 0 0 0-1.41-1.41l-4.86 4.81l-4.89-4.89a1 1 0 0 0-1.41 1.41L16.78 18L12 22.72a1 1 0 1 0 1.41 1.41l4.77-4.77l4.74 4.74a1 1 0 0 0 1.41-1.41Z" 
-                    class="cruz"
-                />
-                <path 
-                    fill="currentColor" 
-                    d="M18 34a16 16 0 1 1 16-16a16 16 0 0 1-16 16m0-30a14 14 0 1 0 14 14A14 14 0 0 0 18 4" 
-                    class="circulo"
-                />
-                </svg>
-                <span class="line"><span>
-            </div>
-          `).join("")}
-      </ul>
+      <div class="item-cart-scroll">
+        <ul class="item-cart">
+          ${this.items.map((e,t)=>`
+              
+              <div class="item-container">
+                  <p>${e.name}</p>
+                  <div class="item-description">
+                      <span>${e.quantity}x</span>
+                      <span>@${e.price.toFixed(2)}</span>
+                      <span>$${(e.quantity*e.price).toFixed(2)}</span>
+                  </div>
+                  
+                  <svg data-index="${t}" class="btn-remove-order" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+                  <path 
+                      fill="currentColor" 
+                      d="m19.61 18l4.86-4.86a1 1 0 0 0-1.41-1.41l-4.86 4.81l-4.89-4.89a1 1 0 0 0-1.41 1.41L16.78 18L12 22.72a1 1 0 1 0 1.41 1.41l4.77-4.77l4.74 4.74a1 1 0 0 0 1.41-1.41Z" 
+                      class="cruz"
+                  />
+                  <path 
+                      fill="currentColor" 
+                      d="M18 34a16 16 0 1 1 16-16a16 16 0 0 1-16 16m0-30a14 14 0 1 0 14 14A14 14 0 0 0 18 4" 
+                      class="circulo"
+                  />
+                  </svg>
+                  <span class="line"><span>
+              </div>
+            `).join("")}
+        </ul>
+      </div>
       <div class="order">
           <span>Order Total</span>
           <span class="price-total">${this.totalPrice()}</span>
