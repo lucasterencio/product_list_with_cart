@@ -84,38 +84,40 @@ export class Cart {
       
       this.element.innerHTML = `
       <h2>Your Cart (${this.items.length})</h2>
-      <ul class="item-cart">
-        ${this.items
-          .map((item, index) => {
-            
-            return `
-            
-            <div class="item-container">
-                <p>${item.name}</p>
-                <div class="item-description">
-                    <span>${item.quantity}x</span>
-                    <span>@${item.price.toFixed(2)}</span>
-                    <span>$${(item.quantity * item.price).toFixed(2)}</span>
-                </div>
-                
-                <svg data-index="${index}" class="btn-remove-order" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
-                <path 
-                    fill="currentColor" 
-                    d="m19.61 18l4.86-4.86a1 1 0 0 0-1.41-1.41l-4.86 4.81l-4.89-4.89a1 1 0 0 0-1.41 1.41L16.78 18L12 22.72a1 1 0 1 0 1.41 1.41l4.77-4.77l4.74 4.74a1 1 0 0 0 1.41-1.41Z" 
-                    class="cruz"
-                />
-                <path 
-                    fill="currentColor" 
-                    d="M18 34a16 16 0 1 1 16-16a16 16 0 0 1-16 16m0-30a14 14 0 1 0 14 14A14 14 0 0 0 18 4" 
-                    class="circulo"
-                />
-                </svg>
-                <span class="line"><span>
-            </div>
-          `;
-          })
-          .join("")}
-      </ul>
+      <div class="item-cart-scroll">
+        <ul class="item-cart">
+          ${this.items
+            .map((item, index) => {
+              
+              return `
+              
+              <div class="item-container">
+                  <p>${item.name}</p>
+                  <div class="item-description">
+                      <span>${item.quantity}x</span>
+                      <span>@${item.price.toFixed(2)}</span>
+                      <span>$${(item.quantity * item.price).toFixed(2)}</span>
+                  </div>
+                  
+                  <svg data-index="${index}" class="btn-remove-order" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+                  <path 
+                      fill="currentColor" 
+                      d="m19.61 18l4.86-4.86a1 1 0 0 0-1.41-1.41l-4.86 4.81l-4.89-4.89a1 1 0 0 0-1.41 1.41L16.78 18L12 22.72a1 1 0 1 0 1.41 1.41l4.77-4.77l4.74 4.74a1 1 0 0 0 1.41-1.41Z" 
+                      class="cruz"
+                  />
+                  <path 
+                      fill="currentColor" 
+                      d="M18 34a16 16 0 1 1 16-16a16 16 0 0 1-16 16m0-30a14 14 0 1 0 14 14A14 14 0 0 0 18 4" 
+                      class="circulo"
+                  />
+                  </svg>
+                  <span class="line"><span>
+              </div>
+            `;
+            })
+            .join("")}
+        </ul>
+      </div>
       <div class="order">
           <span>Order Total</span>
           <span class="price-total">${this.totalPrice()}</span>

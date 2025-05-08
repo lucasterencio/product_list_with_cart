@@ -10,8 +10,18 @@
     padding: 24px;
     border-radius: 12px;
     margin-top: 68px;
+
+    display: flex;
+    flex-direction: column;
     
     
+}
+
+.item-cart-scroll {
+  max-height: 50vh; 
+  overflow-y: auto;
+  margin-top: 20px;
+  padding-right: 8px; 
 }
 
 h2{
