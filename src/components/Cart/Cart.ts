@@ -16,7 +16,7 @@ export class Cart {
 
   constructor() {
     this.element = document.createElement("div");
-    this.element.classList = "cart-box";
+    this.element.classList.add("cart-box");
     this.resetCart()
     this.buildCart();
     this.setupCartListener()

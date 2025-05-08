@@ -27,7 +27,7 @@ export class Card {
     }) => void
   ) {
     this.element = document.createElement("div");
-    this.element.classList = "card";
+    this.element.classList.add("card");
 
     this.buildCard();
     this.setupRemoveListener();
