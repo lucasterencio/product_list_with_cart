@@ -6,7 +6,7 @@ var m=Object.defineProperty;var l=(n,e,t)=>e in n?m(n,e,{enumerable:!0,configura
             </picture>
 
             <p tabindex="0" class="btn-format" >
-              <img src="../../../assets/images/icon-add-to-cart.svg">
+              <img src="./assets/images/icon-add-to-cart.svg">
               <span class="card-btn">${this.buttonText}</span>
             </p>
             <div class="card-info">
@@ -16,13 +16,13 @@ var m=Object.defineProperty;var l=(n,e,t)=>e in n?m(n,e,{enumerable:!0,configura
             </div>
         
         `,this.addButtonEvent()}setupCartResetListener(){document.addEventListener("resetCards",e=>{e.stopPropagation(),this.quantity=0;const t=this.element.querySelector(".btn-format");t&&(t.classList.remove("clicado"),t.innerHTML=`
-          <img src="../../../assets/images/icon-add-to-cart.svg">
+          <img src="./assets/images/icon-add-to-cart.svg">
           <span class="card-btn">${this.buttonText}</span>
         `),this.addButtonEvent()})}setupRemoveListener(){document.addEventListener("dadosProntos",e=>{if(e.detail.name===this.obj.name){const a=this.element.querySelector(".btn-format");a&&(a.classList.remove("clicado"),a.innerHTML=`
-            <img src="../../../assets/images/icon-add-to-cart.svg">
+            <img src="./assets/images/icon-add-to-cart.svg">
             <span class="card-btn">${this.buttonText}</span>
         `),this.quantity=1,this.addButtonEvent()}})}handleClick(e){this.quantity=1,this.onAddToCart({name:this.obj.name,price:this.obj.price,quantity:this.quantity}),this.cssLogicClick(e)}setupIncrementDecrement(e){const t=e.querySelector(".plus-img"),s=e.querySelector(".minus-img"),a=e.querySelector(".quantity-item");t==null||t.addEventListener("click",i=>{i.stopPropagation(),this.quantity+=1,a.textContent=this.quantity.toString(),document.dispatchEvent(new CustomEvent("updateCart",{detail:{productName:this.obj.name,action:"increment"}}))}),s==null||s.addEventListener("click",i=>{if(i.stopPropagation(),this.quantity>1)this.quantity-=1,a.textContent=this.quantity.toString();else{e.classList.remove("clicado"),e.innerHTML=`
-          <img src="../../../assets/images/icon-add-to-cart.svg">
+          <img src="./assets/images/icon-add-to-cart.svg">
           <span class="card-btn">${this.buttonText}</span>
         `;const r=new CustomEvent("updateCart",{detail:{productName:this.obj.name,action:"remove"}});document.dispatchEvent(r),this.addButtonEvent()}document.dispatchEvent(new CustomEvent("updateCart",{detail:{productName:this.obj.name,action:"decrement"}}))})}cssLogicClick(e){e.classList.add("clicado"),e.innerHTML=`
     <svg class="minus-img" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +41,7 @@ var m=Object.defineProperty;var l=(n,e,t)=>e in n?m(n,e,{enumerable:!0,configura
     `}addButtonEvent(){const e=this.element.querySelector(".btn-format"),t=()=>{this.quantity=1,this.handleClick(s),s.removeEventListener("click",t),this.setupIncrementDecrement(s)};e.replaceWith(e.cloneNode(!0));const s=this.element.querySelector(".btn-format");s==null||s.addEventListener("click",t)}render(){return this.element}}const g=[{image:{thumbnail:"./assets/images/image-waffle-thumbnail.jpg",mobile:"./assets/images/image-waffle-mobile.jpg",tablet:"./assets/images/image-waffle-tablet.jpg",desktop:"./assets/images/image-waffle-desktop.jpg"},name:"Waffle with Berries",category:"Waffle",price:6.5},{image:{thumbnail:"./assets/images/image-creme-brulee-thumbnail.jpg",mobile:"./assets/images/image-creme-brulee-mobile.jpg",tablet:"./assets/images/image-creme-brulee-tablet.jpg",desktop:"./assets/images/image-creme-brulee-desktop.jpg"},name:"Vanilla Bean Crème Brûlée",category:"Crème Brûlée",price:7},{image:{thumbnail:"./assets/images/image-macaron-thumbnail.jpg",mobile:"./assets/images/image-macaron-mobile.jpg",tablet:"./assets/images/image-macaron-tablet.jpg",desktop:"./assets/images/image-macaron-desktop.jpg"},name:"Macaron Mix of Five",category:"Macaron",price:8},{image:{thumbnail:"./assets/images/image-tiramisu-thumbnail.jpg",mobile:"./assets/images/image-tiramisu-mobile.jpg",tablet:"./assets/images/image-tiramisu-tablet.jpg",desktop:"./assets/images/image-tiramisu-desktop.jpg"},name:"Classic Tiramisu",category:"Tiramisu",price:5.5},{image:{thumbnail:"./assets/images/image-baklava-thumbnail.jpg",mobile:"./assets/images/image-baklava-mobile.jpg",tablet:"./assets/images/image-baklava-tablet.jpg",desktop:"./assets/images/image-baklava-desktop.jpg"},name:"Pistachio Baklava",category:"Baklava",price:4},{image:{thumbnail:"./assets/images/image-meringue-thumbnail.jpg",mobile:"./assets/images/image-meringue-mobile.jpg",tablet:"./assets/images/image-meringue-tablet.jpg",desktop:"./assets/images/image-meringue-desktop.jpg"},name:"Lemon Meringue Pie",category:"Pie",price:5},{image:{thumbnail:"./assets/images/image-cake-thumbnail.jpg",mobile:"./assets/images/image-cake-mobile.jpg",tablet:"./assets/images/image-cake-tablet.jpg",desktop:"./assets/images/image-cake-desktop.jpg"},name:"Red Velvet Cake",category:"Cake",price:4.5},{image:{thumbnail:"./assets/images/image-brownie-thumbnail.jpg",mobile:"./assets/images/image-brownie-mobile.jpg",tablet:"./assets/images/image-brownie-tablet.jpg",desktop:"./assets/images/image-brownie-desktop.jpg"},name:"Salted Caramel Brownie",category:"Brownie",price:4.5},{image:{thumbnail:"./assets/images/image-panna-cotta-thumbnail.jpg",mobile:"./assets/images/image-panna-cotta-mobile.jpg",tablet:"./assets/images/image-panna-cotta-tablet.jpg",desktop:"./assets/images/image-panna-cotta-desktop.jpg"},name:"Vanilla Panna Cotta",category:"Panna Cotta",price:6.5}];class u{constructor(e,t){o(this,"element");o(this,"items",[]);o(this,"totalPrice");this.element=document.createElement("div"),this.element.classList.add("modal-overlay"),this.items=e,this.totalPrice=t,this.buildModal(),this.addCloseEvent()}buildModal(){this.element.innerHTML=`
             <div class="modal">
                 <header>
-                    <img src="../../../assets/images/icon-order-confirmed.svg">
+                    <img src="./assets/images/icon-order-confirmed.svg">
                     <p class="title">Order Confirmed</p>
                     <span>We hope you enjoy your food!</span>
                 </header>
@@ -109,7 +109,7 @@ var m=Object.defineProperty;var l=(n,e,t)=>e in n?m(n,e,{enumerable:!0,configura
       </div>
 
       <div class="carbon-neutral">
-          <img src="../../../assets/images/icon-carbon-neutral.svg">
+          <img src="./assets/images/icon-carbon-neutral.svg">
           <span>This is a <b>carbon-neutral</b> delivery</span>
       </div>
 
@@ -117,7 +117,7 @@ var m=Object.defineProperty;var l=(n,e,t)=>e in n?m(n,e,{enumerable:!0,configura
     `,this.confirmOrder(),this.totalPrice(),this.addRemoveEventListeners()):this.element.innerHTML=`
             <h2>Your Cart (0)</h2>
             <div class="container-empty">
-                <img src="../../../assets/images/illustration-empty-cart.svg">
+                <img src="./assets/images/illustration-empty-cart.svg">
                 <p>Your added items will appear here</p>
             </div>
 
